@@ -51,14 +51,14 @@
 #    print(n)
 
 
-n = int(input("san kirgiz")) 
-i = 1
-summa = 0
+# n = int(input("san kirgiz")) 
+# i = 1
+# summa = 0
 
-while i <= n:
-     summa += i
-     i += 1
-print("summa:", )    
+# while i <= n:
+#      summa += i
+#      i += 1
+# print("summa:", )    
 
 
 
