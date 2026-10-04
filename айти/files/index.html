@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atyr Market — атыр маркетплейси</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="wrap nav">
+    <a href="#home" class="logo">Atyr <b>Market</b></a>
+    <nav id="menu">
+      <a href="#home">Башкы бет</a>
+      <a href="#catalog">Атырлар</a>
+      <a href="#categories">Категориялар</a>
+      <a href="#sell">Атыр сатуу</a>
+      <a href="#favorites">Сүйүктүүлөр <span id="favCount" class="badge">0</span></a>
+      <a href="#mine">Кирүү / Профиль</a>
+    </nav>
+    <div class="acts">
+      <button id="searchBtn" aria-label="Издөө">🔍</button>
+      <button id="burger" aria-label="Меню">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <h1>Өзүңө жаккан атырды тап же өзүң сат!</h1>
+      <p>Кыргызстандагы атыр сүйүүчүлөрдүн аянтчасы: оригиналдарды, нишалык жана араб атырларын түз сатуучулардан тапкыла.</p>
+      <div class="btns">
+        <a href="#catalog" class="btn gold">Атырларды көрүү</a>
+        <a href="#sell" class="btn ghost">Атыр сатуу</a>
+      </div>
+    </div>
+    <div class="bottles" aria-hidden="true"><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- КАТЕГОРИЯЛАР -->
+<section id="categories" class="wrap sec">
+  <h2>Категориялар</h2>
+  <div id="chips" class="chips"></div>
+</section>
+
+<!-- КАТАЛОГ -->
+<section id="catalog" class="wrap sec">
+  <h2>Атырлар</h2>
+  <input id="q" class="search" type="search" placeholder="Атырдын атын же брендин издеңиз…">
+  <div class="filters">
+    <select id="fBrand"></select>
+    <select id="fCat"></select>
+    <select id="fCond"><option value="">Жаңы / колдонулган</option><option>Жаңы</option><option>Колдонулган</option></select>
+    <input id="fMin" type="number" min="0" placeholder="Мин. баа (сом)">
+    <input id="fMax" type="number" min="0" placeholder="Макс. баа (сом)">
+    <input id="fCity" type="text" placeholder="Шаар">
+    <select id="sort">
+      <option value="new">Жаңы жарыялангандар</option>
+      <option value="asc">Арзан → кымбат</option>
+      <option value="desc">Кымбат → арзан</option>
+      <option value="pop">Популярдуу</option>
+    </select>
+    <button id="reset" class="btn ghost sm">Тазалоо</button>
+  </div>
+  <p id="count" class="muted"></p>
+  <div id="grid" class="grid"></div>
+</section>
+
+<!-- САТУУ ФОРМАСЫ -->
+<section id="sell" class="sell">
+  <div class="wrap sec">
+    <h2 id="formTitle">Атыр сатуу</h2>
+    <form id="form" novalidate>
+      <input type="hidden" id="pid">
+      <label>Атырдын аты<input id="name" placeholder="Мис: Dior Sauvage"></label>
+      <label>Бренд<input id="brand" placeholder="Мис: Dior"></label>
+      <label>Категория<select id="cat"></select></label>
+      <label>Баасы (сом)<input id="price" type="number" min="1" placeholder="2500"></label>
+      <label>Көлөмү (ml)<input id="size" type="number" min="1" placeholder="100"></label>
+      <label>Абалы<select id="cond"><option>Жаңы</option><option>Колдонулган</option></select></label>
+      <label>Шаар<input id="city" placeholder="Бишкек"></label>
+      <label>Сатуучунун аты<input id="seller" placeholder="Атыңыз"></label>
+      <label>Телефон<input id="phone" type="tel" placeholder="0555 123 456"></label>
+      <label>WhatsApp<input id="wa" type="tel" placeholder="Бош калса, телефон колдонулат"></label>
+      <label class="full">Атырдын сүрөтү<input id="img" type="file" accept="image/*"></label>
+      <img id="preview" class="preview" alt="" hidden>
+      <label class="full">Атыр жөнүндө маалымат<textarea id="desc" rows="4" placeholder="Нота, сактоо мөөнөтү, себеби…"></textarea></label>
+      <button type="submit" id="submitBtn" class="btn gold big full">Жарыялоо</button>
+    </form>
+  </div>
+</section>
+
+<!-- СҮЙҮКТҮҮЛӨР -->
+<section id="favorites" class="wrap sec">
+  <h2>Сүйүктүүлөр</h2>
+  <div id="favGrid" class="grid"></div>
+</section>
+
+<!-- МЕНИН ЖАРЫЯЛАРЫМ -->
+<section id="mine" class="wrap sec">
+  <h2>Менин жарыяларым</h2>
+  <div id="mineGrid" class="grid"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap fgrid">
+    <div><div class="logo">Atyr <b>Market</b></div><p>Атыр сатуу жана сатып алуу аянтчасы.</p></div>
+    <div><a href="#">Биз жөнүндө</a><a href="#">Байланыш</a><a href="#">Жарнама берүү</a></div>
+    <div><a href="#">Колдонуу шарттары</a><a href="#">Купуялык саясаты</a></div>
+    <div><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a><a href="https://t.me/" target="_blank" rel="noopener">Telegram</a></div>
+  </div>
+</footer>
+
+<!-- MODAL (деталдар / өчүрүүнү ырастоо) -->
+<div id="modal" class="modal" hidden>
+  <div class="box" role="dialog" aria-modal="true"><button class="x" data-close aria-label="Жабуу">✕</button><div id="modalBody"></div></div>
+</div>
+<div id="toast" class="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
